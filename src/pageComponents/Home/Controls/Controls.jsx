@@ -1,14 +1,11 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { Search, Select } from '../../../../ui/components';
-import { Container } from '../../../Container';
+import { Search, Select } from '../../../ui/components';
+import { Container } from '../../../components';
 
 const Controls = () => {
   const [search, setSearch] = useState('');
   const [select, setSelect] = useState('');
-
-  console.log(search);
-  console.log(select);
 
   return (
     <div>
