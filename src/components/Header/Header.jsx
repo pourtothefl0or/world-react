@@ -15,7 +15,7 @@ const Header = () => {
     <Root>
       <StyledContainer>
         <Link href="/">Where is the world?</Link>
-        <Mode theme={theme} onClick={() => handleTheme()} />
+        <Mode theme={theme} onClick={handleTheme} />
       </StyledContainer>
     </Root>
   );

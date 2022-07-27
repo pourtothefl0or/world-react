@@ -1,6 +1,6 @@
 import * as React from "react"
 
-const SvgComponent = ({ path = '#fff', props}) => (
+const SvgComponent = ({ path = '#fff', props }) => (
   <svg
     width={24}
     height={24}
