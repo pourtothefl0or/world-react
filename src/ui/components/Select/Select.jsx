@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { ArrowDown } from '../../icons';
 
-const Select = ({ value, onChange, ...props }) => {
+const Select = ({ placeholder, value, options, onChange, ...props }) => {
   return (
     <Root>
       <ArrowDown fill='var(--color-text)' />
@@ -11,10 +11,10 @@ const Select = ({ value, onChange, ...props }) => {
         value={value}
         onChange={(e) => onChange(e.target.value)}
         {...props}>
-        <option hidden>Filter by region</option>
-        <option>Value 1</option>
-        <option>Value 2</option>
-        <option>Value 3</option>
+        <option hidden>{placeholder}</option>
+        {options.map((value, index) =>
+          <option key={index} value={value}>{value}</option>
+        )}
       </Field>
     </Root>
   );

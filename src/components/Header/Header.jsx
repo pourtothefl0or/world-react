@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { Container } from '../';
 import { Mode } from './components';
@@ -14,7 +15,7 @@ const Header = () => {
   return (
     <Root>
       <StyledContainer>
-        <Link href="/">Where is the world?</Link>
+        <Logo to="/">Where is the world?</Logo>
         <Mode theme={theme} onClick={handleTheme} />
       </StyledContainer>
     </Root>
@@ -33,7 +34,7 @@ const StyledContainer = styled(Container)`
   justify-content: space-between;
 `;
 
-const Link = styled.a`
+const Logo = styled(Link)`
   font-weight: var(--fw-extrabold);
   font-size: var(--fm-sm);
   color: var(--color-text);

@@ -38,6 +38,10 @@ const Field = styled.input`
   background-color: var(--color-ui-base);
   color: var(--color-text);
   box-shadow: var(--shadow);
+
+  &::placeholder {
+    color: var(--color-text);
+  }
 `;
 
 export default Search;

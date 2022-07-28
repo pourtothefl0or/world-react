@@ -1,11 +1,17 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Search, Select } from '../../../ui/components';
 import { Container } from '../../../components';
 
-const Controls = () => {
+const Controls = ({ onSearch }) => {
+  const regions = ['Africa', 'America', 'Asia', 'Europe', 'Oceania'];
+
   const [search, setSearch] = useState('');
-  const [select, setSelect] = useState('');
+  const [region, setRegion] = useState('');
+
+  useEffect(() => {
+    onSearch(search, region);
+  },[search, region]);
 
   return (
     <div>
@@ -15,8 +21,10 @@ const Controls = () => {
           value={search}
           onChange={setSearch} />
         <Select
-          value={select}
-          onChange={setSelect} />
+          placeholder='Filter by region'
+          value={region}
+          options={regions}
+          onChange={setRegion} />
       </StyledContainer>
     </div>
   );
@@ -26,6 +34,7 @@ const StyledContainer = styled(Container)`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 2rem;
   padding-top: 2rem;
   padding-bottom: 2rem;
 

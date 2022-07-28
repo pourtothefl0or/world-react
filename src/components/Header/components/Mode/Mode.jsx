@@ -6,8 +6,8 @@ const Mode = ({ theme, onClick }) => {
   return (
     <Root onClick={() => onClick()}>
       {theme === 'light'
-        ? <><Dark path='var(--color-text)' /> {theme}</>
-        : <><Light path='var(--color-text)' /> {theme}</>}
+        ? <><Dark fill='var(--color-text)' /> {theme}</>
+        : <><Light fill='var(--color-text)' /> {theme}</>}
     </Root>
   );
 };
