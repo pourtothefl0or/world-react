@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { TYPOGRAPHY, VARS } from '../../constants';
 
 const Card = ({ img, name, info = [], onClick }) => {
   return (
@@ -23,7 +24,7 @@ const Card = ({ img, name, info = [], onClick }) => {
 
 const Root = styled.div`
   overflow: hidden;
-  border-radius: var(--radius);
+  border-radius: ${VARS.radius};
   background-color: var(--color-ui-base);
   cursor: pointer;
 
@@ -49,8 +50,8 @@ const Body = styled.div`
 
 const Title = styled.h2`
   margin: 0 0 1rem;
-  font-weight: var(--fw-extrabold);
-  font-size: var(--fs-md);
+  font-weight: ${TYPOGRAPHY.weight.extrabold};
+  font-size: ${TYPOGRAPHY.size.middle};
 `;
 
 const Item = styled.li`
@@ -61,11 +62,11 @@ const Item = styled.li`
 
 const Text = styled.p`
   margin: 0;
-  font-weight: var(--fw-light);
-  font-size: var(--fz-sm);
+  font-weight: ${TYPOGRAPHY.weight.light};
+  font-size: ${TYPOGRAPHY.size.small};
 
   span {
-    font-weight: var(--fw-semibold);
+    font-weight: ${TYPOGRAPHY.weight.semibold};
   }
 `;
 

@@ -11,7 +11,6 @@ const List = ({ countries }) => {
       <StyledContainer>
         {countries.map(({ name, flags, capital, region, population, }, index) => {
           const img = flags.png;
-          const officialName = name.official;
           const info = [
             {
               title: 'Population',
@@ -31,9 +30,9 @@ const List = ({ countries }) => {
             <Card
               key={index}
               img={img}
-              name={officialName}
+              name={name}
               info={info}
-              onClick={() => push(`/details/${officialName}`)} />
+              onClick={() => push(`/details/${name}`)} />
           );
         })}
       </StyledContainer>

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { Container } from '../';
+import { TYPOGRAPHY } from '../../constants';
 import { Mode } from './components';
 
 const Header = () => {
@@ -35,8 +36,8 @@ const StyledContainer = styled(Container)`
 `;
 
 const Logo = styled(Link)`
-  font-weight: var(--fw-extrabold);
-  font-size: var(--fm-sm);
+  font-weight: ${TYPOGRAPHY.weight.extrabold};
+  font-size: ${TYPOGRAPHY.size.small};
   color: var(--color-text);
 `;
 

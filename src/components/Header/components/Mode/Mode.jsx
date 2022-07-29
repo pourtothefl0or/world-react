@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { TYPOGRAPHY } from '../../../../constants';
 import { Dark, Light } from '../../../../ui/icons';
 
 const Mode = ({ theme, onClick }) => {
@@ -16,8 +17,8 @@ const Root = styled.button`
   display: flex;
   align-items: center;
   gap: 5px;
-  font-weight: var(--fw-extrabold);
-  font-size: var(--fm-sm);
+  font-weight: ${TYPOGRAPHY.weight.extrabold};
+  font-size: ${TYPOGRAPHY.size.small};
   text-transform: capitalize;
   color: var(--color-text);
 `;

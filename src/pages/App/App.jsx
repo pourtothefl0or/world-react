@@ -23,7 +23,7 @@ const App = () => {
     let data = [...countries];
 
     if (search) {
-      data = data.filter((el) => el.name.official.toLowerCase().includes(search.toLowerCase()));
+      data = data.filter((el) => el.name.toLowerCase().includes(search.toLowerCase()));
     }
 
     if (region) {

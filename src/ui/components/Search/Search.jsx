@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { VARS } from '../../../constants';
 import { Loupe } from '../../icons';
 
 const Search = ({ value, onChange, ...props }) => {
@@ -31,7 +32,7 @@ const Root = styled.label`
 const Field = styled.input`
   margin: 0;
   border: none;
-  border-radius: var(--radius);
+  border-radius: ${VARS.radius};
   padding: 0.5rem 1rem 0.5rem 2.5rem;
   width: 100%;
   min-height: 50px;

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { VARS } from '../../../constants';
 import { ArrowDown } from '../../icons';
 
 const Select = ({ placeholder, value, options, onChange, ...props }) => {
@@ -36,7 +37,7 @@ const Root = styled.label`
 const Field = styled.select`
   margin: 0;
   border: none;
-  border-radius: var(--radius);
+  border-radius: ${VARS.radius};
   padding: 0.5rem 2.5rem 0.5rem 1rem;
   width: 100%;
   min-height: 50px;
