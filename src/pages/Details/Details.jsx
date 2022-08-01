@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { Container } from '../../components';
 import { MainLayout } from '../../layouts';
 import { ButtonBack } from '../../ui/components';
-import { searchByCountry } from '../../constants';
+import { filterByCode, searchByCountry } from '../../constants';
 import { Info } from '../../pageComponents/DetailsPage';
 
 const Details = () => {
@@ -13,6 +13,7 @@ const Details = () => {
   const navigate = useNavigate();
 
   const [country, setCountry] = useState({});
+  const [neighbors, setNeighbors] = useState([]);
 
   useEffect(() => {
     axios
@@ -20,9 +21,7 @@ const Details = () => {
       .then(({ data }) => setCountry(data[0]));
   }, [name]);
 
-  console.log(country);
-
-  const { flags, nativeName, population, region, subregion, capital, currencies, languages } = country;
+  const { flags, nativeName, population, region, subregion, capital, currencies, languages, borders } = country;
   const img = flags?.png;
 
   const generalInfo = [
@@ -59,6 +58,12 @@ const Details = () => {
     },
   ];
 
+  useEffect(() => {
+    axios
+      .get(filterByCode(borders))
+      .then(({ data }) => setNeighbors((data.map(({ name }) => name))));
+  }, [borders]);
+
   return (
     <MainLayout>
       <SubNav>
@@ -67,7 +72,8 @@ const Details = () => {
       <Info
         img={img}
         name={name}
-        data={{ generalInfo, secondaryInfo }} />
+        data={{ generalInfo, secondaryInfo }}
+        tags={neighbors} />
     </MainLayout>
   );
 };

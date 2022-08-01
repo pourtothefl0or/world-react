@@ -2,11 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 import { Container } from '../../../components';
 import { TYPOGRAPHY } from '../../../constants';
-import { List } from './components';
+import { List, Tags } from './components';
 
-const Info = ({ img, name, data }) => {
+const Info = ({ img, name, data, tags }) => {
   return (
-    <Root>
+    <div>
       <StyledContainer>
         <ImageWrapper>
           <Image src={img} alt={name} />
@@ -17,13 +17,12 @@ const Info = ({ img, name, data }) => {
             <List data={data.generalInfo} />
             <List data={data.secondaryInfo} />
           </ListWrapper>
+          <Tags data={tags} />
         </TextWrapper>
       </StyledContainer>
-    </Root>
+    </div>
   );
 };
-
-const Root = styled.div``;
 
 const StyledContainer = styled(Container)`
   display: flex;
@@ -61,6 +60,8 @@ const Title = styled.h2`
 `;
 
 const ListWrapper = styled.div`
+  margin-bottom: 1rem;
+
   & >:not(:last-child) {
     margin-bottom: 1rem;
   }

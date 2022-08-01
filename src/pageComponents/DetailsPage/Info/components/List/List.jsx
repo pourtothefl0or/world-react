@@ -5,7 +5,7 @@ import { TYPOGRAPHY } from '../../../../../constants';
 const List = ({ className, data }) => {
   return (
     <ul className={className}>
-      {data.map(({ title, description }, index) =>
+      {data?.map(({ title, description }, index) =>
         Array.isArray(description)
           ? (
             <Item key={index}>
